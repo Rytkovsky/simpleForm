@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница авторизации</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" type="image/png" href="./imgs/auth-favicon.png" />
+  </head>
+  <body>
+    <main>
+      <form
+        class="authorization"
+        action="/login"
+        method="post"
+        aria-labelledby="login-title"
+      >
+        <h1 class="authorization__title">Войти в личный кабинет</h1>
+        <img
+          class="authorization__img"
+          src="./imgs/auth-img.webp"
+          alt="Картинка авторизации"
+        />
+        <input
+          class="authorization__contacts"
+          type="text"
+          required=""
+          placeholder="Email/Телефон"
+        />
+        <button type="button">
+          <img
+            class="authorization__info-contacts"
+            src="./imgs/info-contacts.webp"
+            alt="Информация по полю ввода Email/Телефон"
+          />
+        </button>
+        <a href=""><p class="authorization__problems">Не удается войти?</p></a>
+        <input
+          class="authorization__password"
+          type="password"
+          required=""
+          placeholder="Пароль"
+          minlength="6"
+        />
+        <button onclick="return showHidePassword()" type="button">
+          <img
+            class="authorization__check-password"
+            src="./imgs/check-password.webp"
+            alt="Показать пароль"
+          />
+        </button>
+        <button class="authorization__submit" type="submit">Войти</button>
+        <span class="authorization__submit-arrow">➡</span>
+        <div class="authorization__info-wrapper">
+          <button type="button" class="authorization__info">?</button>
+          <p class="authorization__copyrights">Copyright © 2024 SPBlink</p>
+        </div>
+      </form>
+    </main>
+    <script>
+      //кнопка показать пароль работает
+      function showHidePassword() {
+        const input = document.querySelector(".authorization__password");
+        if (input.getAttribute("type") === "password") {
+          input.setAttribute("type", "text");
+        } else {
+          input.setAttribute("type", "password");
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>
